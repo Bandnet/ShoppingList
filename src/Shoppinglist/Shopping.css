@@ -1,0 +1,59 @@
+.checkbox {
+    color: black;
+}
+
+.checkbox.checked {
+    color: gray;
+    text-decoration: line-through;
+}
+.ShoppingList{
+    background-color: #76e0ff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-outside: 10px;
+}
+body{
+    background-color: #15caff;
+    display:flex;
+    align-content: space-around;
+    justify-content: center;
+}
+.ListForm{
+    background-color: #76e0ff;
+    border-radius: 20px;
+    border: #76e0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Shopping{
+    background-color: #76e0ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ListSelector{
+    background-color: red;
+}
+.ItemList li:nth-child(even){
+    background-color: #68b8ff;
+}
+.ItemList li:nth-child(odd){
+    background-color: #b2eeff;
+}
+.Item{
+    display: flex;
+    align-items: center;      /* vertical alignment */
+    justify-content: space-between; /* left text, right checkbox */
+}
+.NewList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+
+}
