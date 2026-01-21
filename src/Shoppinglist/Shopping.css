@@ -6,20 +6,33 @@
     color: gray;
     text-decoration: line-through;
 }
-.ShoppingList{
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #15caff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShoppingList {
     background-color: #76e0ff;
     border-radius: 20px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-outside: 10px;
-}
-body{
-    background-color: #15caff;
-    display:flex;
-    align-content: space-around;
     justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 70%;
+    padding: 2rem;
 }
+
 .ListForm{
     background-color: #76e0ff;
     border-radius: 20px;
@@ -34,6 +47,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80%;
 }
 .ListSelector{
     background-color: red;
@@ -54,6 +68,36 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-button{
+.buttonExport{
+    background-color: #28a745;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
 
+}
+.buttonImport{
+    background-color: #fd7e14;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.buttonCreate{
+    background-color: #17a2b8;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.buttonAdd{
+    background-color: #ffc107;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
 }

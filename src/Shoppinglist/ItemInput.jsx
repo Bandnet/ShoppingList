@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import ItemList from './ItemList.jsx';
-import Items from "./Item.jsx"
+import Items from './Items.jsx'; // datalist component
 
-export default function Shopping({ currentList, addItem }) {
+export default function Shopping({ currentList, addItem, updateListItems }) {
     const [text, setText] = useState("");
     const [amount, setAmount] = useState("");
 
@@ -13,35 +13,42 @@ export default function Shopping({ currentList, addItem }) {
         setAmount("");
     };
 
+    const toggleItemCompleted = (itemId) => {
+        const updatedItems = currentList.items.map(item =>
+            item.id === itemId ? { ...item, completed: !item.completed } : item
+        );
+        updateListItems(currentList.id, updatedItems);
+    };
+
     if (!currentList) return <p>Please select a list</p>;
 
     return (
         <div className="NewList">
-            <div className="NewList">
-                <div>
-                    <h2>Items for: {currentList.name}</h2>
-                </div>
-                <input
-                    list="foodList"
-                    placeholder="Item name"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                />
-                <Items></Items>
-                <input
-                    type="text"
-                    placeholder="Amount"
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                />
+            <h2>Items for: {currentList.name}</h2>
 
-                <div className="NewList">
-                    <button onClick={handleAdd}>Add Item</button>
-                </div>
-            </div>
+            {/* Input with datalist */}
+            <input
+                list="foodList"
+                placeholder="Item name"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+            />
+            <Items /> {/* datalist for autocomplete */}
+
+            <input
+                type="text"
+                placeholder="Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+            />
+
+            <button className="buttonAdd"onClick={handleAdd}>Add Item</button>
+
             <div className="ItemList">
-                {/* Show the list using the new component */}
-                <ItemList items={currentList.items}/>
+                <ItemList
+                    items={currentList.items}
+                    toggleItemCompleted={toggleItemCompleted}
+                />
             </div>
         </div>
     );

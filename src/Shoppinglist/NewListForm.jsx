@@ -20,7 +20,7 @@ export default function NewListForm({ createNewList }) {
                     onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className="NewList">
-                <button onClick={handleCreate}>Create</button>
+                <button className="buttonCreate" onClick={handleCreate}>Create</button>
             </div>
         </div>
     );
